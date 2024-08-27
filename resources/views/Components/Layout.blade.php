@@ -8,9 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head class="h-full bg-gray-100">
 
-<body class="h-full">
+<body class="">
 
-    <div class="min-h-full">
+    <div class="h-screen w-screen flex flex-col">
         <nav class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
@@ -41,8 +41,9 @@
             </div>
         </header>
 
-        <main>
-            <div class="mx-auto max-7-w-7xl sm:px-6 lg:px-8">
+        <main class="flex-1">
+            <div
+                class="mx-auto max-7-w-7xl sm:px-6 lg:px-8 bg-slate-100 h-full w-full flex items-center justify-center">
                 {{ $slot }}
             </div>
         </main>
