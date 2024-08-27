@@ -2,7 +2,7 @@
     <x-slot:heading>
         Job
     </x-slot:heading>
-    <div class="flex items-center justify-center flex-col">
+    <div class="flex items-center justify-center flex-col overflow-hidden ">
         <div>
             <h1 class="text-3xl m-4">{{ $job->employer->name }}</h1>
         </div>
