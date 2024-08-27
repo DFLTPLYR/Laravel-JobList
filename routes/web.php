@@ -14,7 +14,7 @@ Route::get('/Jobs', function () {
     return view('jobs.index', ['jobs' => $jobs]);
 });
 
-Route::get('/Jobs/create', function () {
+Route::get('/Jobs/Create', function () {
     return view('jobs.create');
 });
 
@@ -24,6 +24,12 @@ Route::get('/Jobs/{id}', function ($id) {
 });
 
 Route::post('/Jobs', function () {
+    request()->validate([
+        'title' => ['required', 'min: 3'],
+        'salary' => ['required', 'numeric'],
+        'description' => ['required'],
+    ]);
+
     Job::create([
         'title' => request('title'),
         'salary' => request('salary'),
