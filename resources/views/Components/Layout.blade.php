@@ -16,7 +16,8 @@
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                alt="Your Company">
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
@@ -37,8 +38,9 @@
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
             </div>
         </header>
+
         <main>
-            <div class="mx-auto h-screen border-cyan-400 flex items-center justify-center">
+            <div class="mx-auto items-center justify-center">
                 {{ $slot }}
             </div>
         </main>

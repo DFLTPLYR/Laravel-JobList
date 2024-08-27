@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\JobListing;
+use App\Models\Job;
+use App\Models\Tag;
 
 Route::get('/', function () {
 
@@ -9,12 +10,27 @@ Route::get('/', function () {
 });
 
 Route::get('/Jobs', function () {
-    return view('Jobs', ['jobs' => JobListing::all()]);
+    $jobs = Job::with('employer')->latest()->simplePaginate(9);
+    return view('jobs.index', ['jobs' => $jobs]);
 });
 
-Route::get('/Job/{id}', function ($id) {
-    $job = JobListing::find($id);
-    return view('Job', ['job' => $job]);
+Route::get('/Jobs/create', function () {
+    return view('jobs.create');
+});
+
+Route::get('/Jobs/{id}', function ($id) {
+    $job = Job::find($id);
+    return view('jobs.show', ['job' => $job]);
+});
+
+Route::post('/Jobs', function () {
+    Job::create([
+        'title' => request('title'),
+        'salary' => request('salary'),
+        'description' => request('description'),
+        'employer_id' => 1,
+    ]);
+    return redirect('/Jobs');
 });
 
 Route::get('/Contacts', function () {
