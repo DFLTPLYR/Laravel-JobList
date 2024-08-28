@@ -11,7 +11,7 @@
             <h3>{{ $job->description }}</h3>
         </div>
         <div class="m-4">
-            <x-button href="/Jobs/{{ $job->id }}/Edit">Edit Job</x-button>
+            <x-button href="/Jobs/{{ $job->id }}/edit">Edit Job</x-button>
         </div>
     </div>
 </x-Layout>
