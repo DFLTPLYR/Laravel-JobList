@@ -14,7 +14,7 @@
                         <x-form-label for='title'>Title</x-form-label>
                         <div class="mt-2">
                             <x-form-input id="title" name="title" type="text" placeholder="IT Programmer"
-                                required />
+                                :value="old('title')" required />
                             <x-form-error name="title" />
                         </div>
                     </x-form-field>
@@ -23,7 +23,7 @@
                         <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">Salary</label>
                         <div class="mt-2">
                             <x-form-input id="salary" name="salary" type="text" placeholder="$500,000"
-                                required />
+                                :value="old('salary')" required />
                             <x-form-error name="salary" />
 
                         </div>
@@ -33,19 +33,12 @@
                         <label for="Description"
                             class="block text-sm font-medium leading-6 text-gray-900">Description</label>
                         <div class="mt-2">
-                            <x-form-textarea id="description" name="description" type="text"
+                            <x-form-textarea id="description" name="description" type="text" :value="old('description')"
                                 placeholder="IT Programmer" class="max-h-[200px]"></x-form-textarea>
                             <x-form-error name="description" />
                         </div>
                     </x-form-field>
                 </div>
-                {{-- @if ($errors->any())
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @endif --}}
             </div>
         </div>
 
